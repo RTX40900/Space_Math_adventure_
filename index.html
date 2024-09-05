@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <title>Space Math Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Space Math Adventure</h1>
+        <div id="normal-mode">
+            <div id="level-selection">
+                <label for="level-select">Choose your mission level:</label>
+                <select id="level-select" onchange="changeLevel()">
+                    <option value="1">Cadet (Level 1)</option>
+                    <option value="2">Pilot (Level 2)</option>
+                    <option value="3">Captain (Level 3)</option>
+                    <option value="4">Commander (Level 4)</option>
+                    <option value="5">Admiral (Level 5)</option>
+                </select>
+            </div>
+            <div id="operation-selection">
+                <label for="operation-select">Choose operation:</label>
+                <select id="operation-select">
+                    <option value="addition">Addition</option>
+                    <option value="subtraction">Subtraction</option>
+                    <option value="multiplication">Multiplication</option>
+                    <option value="division">Division</option>
+                    <option value="mixed">Mixed (Addition, Subtraction, Multiplication, Division)</option>
+                </select>
+            </div>
+            <div id="question"></div>
+            <input type="text" id="answer" placeholder="Enter your answer">
+            <button onclick="checkAnswer()">Submit Answer</button>
+            <div id="feedback"></div>
+        </div>
+        <button id="rapid-fire-mode">Start Rapid Fire Mode</button>
+        <div id="timer-selection" style="display: none;">
+            <label for="timer-select">Choose game duration:</label>
+            <select id="timer-select">
+                <option value="30">30 seconds</option>
+                <option value="60" selected>60 seconds</option>
+                <option value="120">120 seconds</option>
+            </select>
+            <button onclick="startRapidFireMode()">Start Game</button>
+        </div>
+        <div id="rapid-fire-area" style="display: none;">
+            <div id="timer">60</div>
+            <div id="score">Score: 0</div>
+            <div id="lives">
+                <img src="UFO_Spaceship_png_image_png_for_Free_Download___DLPNG-removebg-preview.png" class="life">
+                <img src="UFO_Spaceship_png_image_png_for_Free_Download___DLPNG-removebg-preview.png" class="life">
+                <img src="UFO_Spaceship_png_image_png_for_Free_Download___DLPNG-removebg-preview.png" class="life">
+            </div>
+            <div id="space-battle">
+                <div id="player-ship"></div>
+                <div id="enemies"></div>
+            </div>
+            <div id="rapid-fire-question"></div>
+            <input type="text" id="rapid-fire-answer" placeholder="Enter your answer">
+            <button onclick="checkRapidFireAnswer()">Submit</button>
+        </div>
+        
+        <div id="scoreboard" style="display: none;"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #000000;
+    overflow: hidden;
+}
+
+#game-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(25, 25, 25, 0.8);
+    border: 2px solid #00ffff;
+    border-radius: 20px;
+    padding: 2rem;
+    gap:1rem;
+    color: #ffffff;
+    text-align: center;
+    max-width: 700px;
+    width: 90%;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom:1.5rem;
+}
+
+#level-selection {
+    margin-bottom: 1.5rem;
+}
+
+select {
+    background-color: #000000;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    
+    font-size: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#game-area {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 1.5rem;
+}
+
+#level {
+    font-size: 1.2rem;
+    color: #ff00ff;
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#question-box {
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+#question {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ffff;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #ff00ff;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Orbitron', sans-serif;
+}
+
+button:hover {
+    background-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+#feedback {
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.correct {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.incorrect {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+#rapid-fire-mode {
+    background-color: #ff4500;
+    margin-bottom: 6rem;
+}
+
+#rapid-fire-area {
+    position: relative;
+    height: 400px;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000033;
+}
+
+#timer, #score, #lives {
+    position: absolute;
+    top: 10px;
+    font-size: 24px;
+    color: #00ffff;
+    z-index: 10;
+}
+
+#timer { left: 10px; }
+#score { right: 10px; }
+#lives {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    background-color: aqua;
+}
+
+.life {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+}
+#space-battle {
+    position: relative;
+    height: 100%;
+}
+
+#player-ship {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background-image: url('UFO_Spaceship_png_image_png_for_Free_Download___DLPNG-removebg-preview.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: aqua;
+    border-radius: 20%;
+}
+
+.enemy {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('enemy-removebg-preview.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.laser {
+    position: absolute;
+    height: 4px; /* Increased thickness for visibility */
+    width: 10vh;
+    background-color: green;
+    transform-origin: left center;
+    box-shadow: 0 0 5px green, 0 0 10px green; /* Add glow effect */
+}
+
+@keyframes laser-flash {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+#rapid-fire-question {
+    position:absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 24px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    z-index: 10;
+}
+
+#rapid-fire-answer {
+    position: absolute;
+    bottom: 85px;
+    left: 65%;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 20;
+}
+
+#rapid-fire-mode {
+    display: block;
+    margin: 0 auto; /* Center the button horizontally */
+    position: relative; /* Ensure it stays in place */
+    left: 50%;
+    transform: translateX(-147%);
+}
+
+
+#scoreboard {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+#scoreboard h2 {
+    color: #ff00ff;
+}
+
+#scoreboard ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#scoreboard li {
+    margin-bottom: 5px;
+}
+
+#scoreboard li:before {
+    content: 'Score: ';
+    color: #ff00ff;
+}
+
+#scoreboard button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #00ffff;
+    color: black;
+}
+
+#scoreboard button:hover {
+    background-color: #ff00ff;
+    color: white;
+}
+

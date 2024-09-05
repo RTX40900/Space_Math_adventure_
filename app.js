@@ -60,15 +60,11 @@ function calculateAnswer(num1, num2, operation) {
 }
 
 function checkAnswer() {
-    const userAnswer = parseFloat(document.getElementById('answer').value);
+    const userAnswer = parseInt(document.getElementById('answer').value);
     const feedback = document.getElementById('feedback');
-    if (isNaN(userAnswer)) {
-        feedback.innerText = 'Please enter a valid number.';
-        feedback.className = 'incorrect';
-    } else if (userAnswer === parseFloat(currentQuestion.answer)) {
+    if (userAnswer === currentQuestion.answer) {
         feedback.innerText = 'Correct!';
         feedback.className = 'correct';
-        updateAchievements();
     } else {
         feedback.innerText = 'Incorrect. Try again.';
         feedback.className = 'incorrect';
